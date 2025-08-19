@@ -14,9 +14,6 @@ export class TV {
 path:Alltringingmovies=inject(Alltringingmovies)
 pathttv:string=this.path.path;
 
-
-constructor(private post:Alltringingmovies){}
-
 tv=signal<Movieapiinterface[]>([]);
 
 ngOnInit(){
@@ -26,7 +23,7 @@ this.showdata();
 
 
 showdata(){
-  this.post.getdata("tv").subscribe({
+  this.path.getdata("tv").subscribe({
     next:(res)=>{
       this.tv.set(res.results);
       

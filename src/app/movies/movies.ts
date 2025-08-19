@@ -13,9 +13,6 @@ export class Movies {
 path:Alltringingmovies=inject(Alltringingmovies)
 pathtmovies:string=this.path.path;
 
-
-constructor(private post:Alltringingmovies){}
-
 Movies=signal<Movieapiinterface[]>([]);
 
 ngOnInit(){
@@ -23,9 +20,8 @@ this.showdata();
 }
 
 
-
 showdata(){
-  this.post.getdata("movie").subscribe({
+  this.path.getdata("movie").subscribe({
     next:(res)=>{
       this.Movies.set(res.results);
       

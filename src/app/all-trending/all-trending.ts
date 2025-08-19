@@ -17,8 +17,6 @@ export class AllTrending{
 path:Alltringingmovies=inject(Alltringingmovies)
 pathtrending:string=this.path.path;
 
-constructor(private post:Alltringingmovies){}
-
 AllTrendingMovies=signal<Movieapiinterface[]>([]);
 
 ngOnInit(){
@@ -26,7 +24,7 @@ this.showdata();
 }
 
 showdata(){
-  this.post.getdata("all").subscribe({
+  this.path.getdata("all").subscribe({
     next:(res)=>{
       this.AllTrendingMovies.set(res.results);
       console.log(this.AllTrendingMovies());

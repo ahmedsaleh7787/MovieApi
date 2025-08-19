@@ -14,8 +14,6 @@ export class People {
 path:Alltringingmovies=inject(Alltringingmovies)
 pathtpeople:string=this.path.path;
 
-constructor(private post:Alltringingmovies){}
-
 person=signal<Movieapiinterface[]>([]);
 
 ngOnInit(){
@@ -23,7 +21,7 @@ this.showdata();
 }
 
 showdata(){
-  this.post.getdata("person").subscribe({
+  this.path.getdata("person").subscribe({
     next:(res)=>{
       this.person.set(res.results);
       console.log(this.person());
