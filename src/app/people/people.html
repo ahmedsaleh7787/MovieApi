@@ -1,0 +1,26 @@
+
+<div class="bg-[#73A9C2]" >
+<h1 class="p-6 text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><span class="text-blue-600 dark:text-blue-500 font-mono">All Trending People</span> </h1>
+
+
+<section class=" container mx-auto flex justify-center ">
+    <div class=" gap-2 gap-y-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+
+        @for (movie of person(); track $index) {
+
+        <div
+            class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+
+            <div class="flex flex-col items-center pb-5">
+                <img class="w-24 h-24 mb-3 rounded-full shadow-lg m-5" [src]="movie.profile_path ? (pathtpeople + movie.profile_path): '/imgnotfound.jpg' "
+                    alt="Bonnie image" />
+                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{movie.name}}</h5>
+
+            </div>
+        </div>
+
+        }
+
+        </div>
+</section>
+</div>

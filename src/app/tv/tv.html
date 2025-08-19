@@ -1,0 +1,48 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bg-[#73A9C2]" >
+<h1 class=" p-10 text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><span class="text-blue-600 dark:text-blue-500 font-mono">All Trending TV SHOW</span> </h1>
+
+
+<section class=" container mx-auto flex justify-center ">
+    <div class=" gap-2 gap-y-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+
+        @for (movie of tv(); track $index) {
+
+        <div
+            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <a >
+                <img class="rounded-t-lg" [src]="movie.poster_path ? (pathttv + movie.poster_path): '/imgnotfound.jpg'" alt="" />
+            </a>
+            <div class="p-5">
+                <a >
+                    <h5 class=" line-clamp-1 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {{movie.name?movie.name:movie.title}}</h5>
+                </a>
+                <p class="line-clamp-3 mb-3 font-normal text-gray-700 dark:text-gray-400">{{movie.overview}}</p>
+
+            </div>
+        </div>
+
+
+        }
+
+</div>
+
+</section>
+
+
+</div>
